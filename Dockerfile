@@ -4,9 +4,11 @@ ENV UID=99
 ENV GUID=100
 
 RUN deluser node
-RUN adduser -u $UID -g $GUID -D foundry
+RUN addgroup -g $GUID foundry \
+    && adduser -u $UID -G foundry -s /bin/sh -D foundry
 
 USER foundry
+
 RUN mkdir -p /home/foundry/data
 RUN mkdir -p /home/foundry/app
 
