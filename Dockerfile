@@ -1,7 +1,7 @@
 FROM node:12-alpine
 
-ENV UID=1000
-ENV GUID=1000
+ENV UID=99
+ENV GUID=100
 
 RUN deluser node
 RUN adduser -u $UID -D foundry
